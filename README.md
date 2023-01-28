@@ -1,10 +1,14 @@
 # README
 
 ```
-~ find your partners . ~_Anonymous_
+~ find your partners.
+  ~ 🗣️ 😵
 ```
 
 ## Techs
 
-- NextJs
+- NextJS
 - TypeScript
+- TailwindCSS
+- GraphQl
+- MongoDB
