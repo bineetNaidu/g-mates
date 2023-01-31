@@ -1,11 +1,14 @@
-import { DataSource } from 'typeorm';
+import { DataSource, DataSourceOptions } from 'typeorm';
+import { configuration } from './configuration';
 
-export const AppDataSource = new DataSource({
+export const dataSourceConfigOptions: DataSourceOptions = {
   type: 'postgres',
-  url: 'postgresql://username:password@localhost:5432/g_mates_db',
+  url: configuration.database.uri,
   synchronize: true,
   logging: true,
   entities: [],
   subscribers: [],
   migrations: [],
-});
+};
+
+export const AppDataSource = new DataSource(dataSourceConfigOptions);
