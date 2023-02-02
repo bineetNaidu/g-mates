@@ -1,5 +1,11 @@
 import { transformer } from '@/utils/transformer';
-import { Column, Entity, ManyToOne, PrimaryGeneratedColumn } from 'typeorm';
+import {
+  Column,
+  Entity,
+  ManyToOne,
+  PrimaryGeneratedColumn,
+  type Relation,
+} from 'typeorm';
 import { UserEntity } from './user.entity';
 
 @Entity({ name: 'sessions' })
@@ -17,5 +23,5 @@ export class SessionEntity {
   expires!: string;
 
   @ManyToOne(() => UserEntity, (user) => user.sessions)
-  user!: UserEntity;
+  user!: Relation<UserEntity>;
 }
