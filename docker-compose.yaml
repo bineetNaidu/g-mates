@@ -12,3 +12,10 @@ services:
       POSTGRES_USER: username # The PostgreSQL user (useful to connect to the database)
       POSTGRES_PASSWORD: password # The PostgreSQL password (useful to connect to the database)
       POSTGRES_DB: g_mates_db # The PostgreSQL default database (automatically created at first launch)
+  adminer:
+    image: adminer:latest
+    environment:
+      ADMINER_DEFAULT_SERVER: db
+      ADMINER_DESIGN: galkaev
+    ports:
+      - 8080:8080
